@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Latest news on Laos economy, agriculture, and anthropological exploration in Southeast Asia">
-    <title>Laos Insight - Economy, Agriculture & Exploration News</title>
+    <title>Laos Economy News - Laos Insight - Economy, Agriculture & Exploration News</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
@@ -234,7 +234,7 @@
 </head>
 <body>
     <header>
-        <h1>Laos Insight</h1>
+        <h1>Laos Economy News - Laos Insight</h1>
         <p>In-depth reporting on economy, agriculture, and exploration in Laos and Southeast Asia</p>
     </header>
 
@@ -314,7 +314,7 @@
                 
                 <h3>Contact Information</h3>
                 <p><strong>Publisher:</strong> Laos Insight Media Ltd.<br>
-                <strong>Email:</strong> editor@laosinsight.news<br>
+                <strong>Email:</strong> editor@laoseconomynews.com<br>
                 <strong>Location:</strong> Vientiane, Laos</p>
                 
                 <p><em>Established 2025 - Committed to independent journalism</em></p>
@@ -328,13 +328,13 @@
                 <p>We welcome tips, story ideas, and feedback from our readers.</p>
                 
                 <h3>Editorial Team</h3>
-                <p><strong>Email:</strong> editor@laosinsight.news</p>
+                <p><strong>Email:</strong> editor@laoseconomynews.com</p>
                 
                 <h3>Business Inquiries</h3>
-                <p><strong>Email:</strong> business@laosinsight.news</p>
+                <p><strong>Email:</strong> business@laoseconomynews.com</p>
                 
                 <h3>Press & Media</h3>
-                <p><strong>Email:</strong> press@laosinsight.news</p>
+                <p><strong>Email:</strong> press@laoseconomynews.com</p>
                 
                 <h3>Mailing Address</h3>
                 <p>Laos Insight Media Ltd.<br>
@@ -371,7 +371,7 @@
                 <p>We may update this privacy policy periodically. Changes will be posted on this page with an updated revision date.</p>
                 
                 <h3>Contact</h3>
-                <p>If you have questions about this privacy policy, please contact us at: privacy@laosinsight.news</p>
+                <p>If you have questions about this privacy policy, please contact us at: privacy@laoseconomynews.com</p>
             </div>
         </div>
     </div>
@@ -534,7 +534,7 @@
         function generateRSS() {
             const rssItems = articles.map(article => {
                 const pubDate = new Date(article.date).toUTCString();
-                const link = article.type === 'external' ? article.url : `https://laosinsight.news/article/${article.id}`;
+                const link = article.type === 'external' ? article.url : `https://laoseconomynews.com/article/${article.id}`;
                 
                 return `
     <item>
@@ -552,11 +552,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Laos Insight</title>
-    <link>https://laosinsight.news</link>
+    <link>https://laoseconomynews.com</link>
     <description>In-depth reporting on economy, agriculture, and exploration in Laos</description>
     <language>en-us</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
-    <atom:link href="https://laosinsight.news/rss.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="https://laoseconomynews.com/rss.xml" rel="self" type="application/rss+xml"/>
 ${rssItems}
   </channel>
 </rss>`;
