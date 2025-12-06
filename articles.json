@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "type": "original",
+    "title": "Laos Economy Shows 5% Growth in Agricultural Sector",
+    "author": "Editorial Team",
+    "category": "Economy",
+    "content": "The Laotian economy has demonstrated remarkable resilience with a 5% growth in the agricultural sector this quarter. Local farmers have benefited from new irrigation projects and improved access to regional markets...",
+    "date": "2025-11-06T00:00:00Z"
+  },
+  {
+    "id": 2,
+    "type": "external",
+    "title": "New Archaeological Discovery in Luang Prabang Province",
+    "author": "External Source",
+    "category": "Exploration",
+    "content": "Recent anthropological expedition uncovers ancient artifacts dating back to 15th century...",
+    "url": "https://example.com/archaeology-discovery",
+    "source": "Southeast Asia Research Journal",
+    "date": "2025-11-05T00:00:00Z"
+  }
+]

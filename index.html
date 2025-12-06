@@ -1,586 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Latest news on Laos economy, agriculture, and anthropological exploration in Southeast Asia">
-    <title>Laos Economy News - Laos Insight - Economy, Agriculture & Exploration News</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: Georgia, 'Times New Roman', serif; 
-            line-height: 1.6; 
-            color: #333;
-            background: #f5f5f5;
-        }
-        header {
-            background: #1a472a;
-            color: white;
-            padding: 1.5rem 2rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        header h1 { 
-            font-size: 2rem; 
-            margin-bottom: 0.3rem;
-        }
-        header p { 
-            font-size: 0.9rem; 
-            opacity: 0.9;
-            font-style: italic;
-        }
-        nav {
-            background: white;
-            border-bottom: 2px solid #1a472a;
-            padding: 0 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-        }
-        nav a {
-            display: block;
-            padding: 1rem 0;
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            border-bottom: 3px solid transparent;
-            transition: all 0.3s;
-        }
-        nav a:hover, nav a.active {
-            color: #1a472a;
-            border-bottom-color: #1a472a;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-        .admin-panel {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .admin-panel h2 {
-            color: #1a472a;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
-        }
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: #555;
-        }
-        input[type="text"], input[type="url"], textarea, select {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-family: inherit;
-            font-size: 1rem;
-        }
-        textarea {
-            min-height: 200px;
-            resize: vertical;
-        }
-        button {
-            background: #1a472a;
-            color: white;
-            padding: 0.75rem 2rem;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 1rem;
-            font-weight: 600;
-            transition: background 0.3s;
-        }
-        button:hover {
-            background: #2d6644;
-        }
-        .article-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .article-card {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .article-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-        }
-        .article-card .category {
-            background: #1a472a;
-            color: white;
-            padding: 0.5rem 1rem;
-            font-size: 0.85rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        .article-card .content {
-            padding: 1.5rem;
-        }
-        .article-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.75rem;
-            color: #1a472a;
-            line-height: 1.4;
-        }
-        .article-card .excerpt {
-            color: #666;
-            margin-bottom: 1rem;
-            line-height: 1.6;
-        }
-        .article-card .meta {
-            font-size: 0.85rem;
-            color: #999;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 1rem;
-            border-top: 1px solid #eee;
-        }
-        .article-card a {
-            color: #1a472a;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        .article-card a:hover {
-            text-decoration: underline;
-        }
-        .external-badge {
-            background: #e8f5e9;
-            color: #2e7d32;
-            padding: 0.25rem 0.5rem;
-            border-radius: 3px;
-            font-size: 0.75rem;
-            font-weight: 600;
-        }
-        .page-content {
-            background: white;
-            padding: 3rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .page-content h2 {
-            color: #1a472a;
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
-        }
-        .page-content h3 {
-            color: #1a472a;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-        }
-        .page-content p {
-            margin-bottom: 1rem;
-        }
-        .page-content a {
-            color: #1a472a;
-            font-weight: 600;
-        }
-        footer {
-            background: #1a472a;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
-        }
-        footer a {
-            color: white;
-            text-decoration: underline;
-        }
-        .hidden { display: none; }
-        .delete-btn {
-            background: #c62828;
-            padding: 0.5rem 1rem;
-            font-size: 0.85rem;
-            margin-top: 0.5rem;
-        }
-        .delete-btn:hover {
-            background: #d32f2f;
-        }
-        @media (max-width: 768px) {
-            .article-grid {
-                grid-template-columns: 1fr;
-            }
-            nav ul {
-                flex-wrap: wrap;
-                gap: 1rem;
-            }
-            .container {
-                padding: 1rem;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Independent news site focusing on Laos economy, agriculture, and exploration.">
+<title>Laos Insight – Economy, Agriculture & Exploration News</title>
+<style>
+body { font-family: Arial, sans-serif; margin:0; background:#f5f5f5; color:#333; }
+header { background:#1a472a; color:#fff; padding:1rem 2rem; }
+nav { background:#fff; border-bottom:2px solid #1a472a; position:sticky; top:0; }
+nav ul { list-style:none; display:flex; margin:0; padding:0; }
+nav li { margin-right:1.5rem; }
+nav a { display:block; padding:1rem 0; color:#333; text-decoration:none; border-bottom:3px solid transparent; }
+nav a:hover, nav a.active { color:#1a472a; border-bottom-color:#1a472a; }
+.container { max-width: 1000px; margin:auto; padding:2rem; }
+.article-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); gap:1.5rem; }
+.article-card { background:#fff; padding:1rem; border-radius:6px; box-shadow:0 2px 5px rgba(0,0,0,0.1); }
+.article-card h3 { margin:0 0 .5rem; color:#1a472a; font-size:1.25rem; }
+.article-card .category { font-size:.75rem; font-weight:bold; text-transform:uppercase; margin-bottom:.5rem; color:#fff; background:#1a472a; display:inline-block; padding:.2rem .5rem; border-radius:3px;}
+.article-card .excerpt { font-size:.9rem; margin-bottom:.5rem; }
+.article-card .meta { font-size:.75rem; color:#777; display:flex; justify-content:space-between; align-items:center; border-top:1px solid #eee; padding-top:.5rem; }
+.page-content { background:#fff; padding:2rem; border-radius:6px; box-shadow:0 2px 5px rgba(0,0,0,0.1); }
+footer { background:#1a472a; color:#fff; text-align:center; padding:1rem; margin-top:3rem; }
+footer a { color:#fff; text-decoration:underline; }
+.hidden { display:none; }
+</style>
 </head>
 <body>
-    <header>
-        <h1>Laos Economy News - Laos Insight</h1>
-        <p>In-depth reporting on economy, agriculture, and exploration in Laos and Southeast Asia</p>
-    </header>
-
-    <nav>
-        <ul>
-            <li><a href="#" onclick="showSection('home')" class="active">Home</a></li>
-            <li><a href="#" onclick="showSection('admin')">Submit Article</a></li>
-            <li><a href="#" onclick="showSection('about')">About</a></li>
-            <li><a href="#" onclick="showSection('contact')">Contact</a></li>
-            <li><a href="#" onclick="showSection('privacy')">Privacy Policy</a></li>
-            <li><a href="#" onclick="generateRSS()">RSS Feed</a></li>
-        </ul>
-    </nav>
-
-    <div class="container">
-        <!-- Home Section -->
-        <div id="home-section">
-            <div class="article-grid" id="articles-grid"></div>
-        </div>
-
-        <!-- Admin Section -->
-        <div id="admin-section" class="hidden">
-            <div class="admin-panel">
-                <h2>Submit Your Article</h2>
-                <form id="article-form">
-                    <div class="form-group">
-                        <label for="article-type">Article Type:</label>
-                        <select id="article-type" required>
-                            <option value="original">Original Article (Your Content)</option>
-                            <option value="external">External News Link</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="title">Title:</label>
-                        <input type="text" id="title" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="author">Author Name:</label>
-                        <input type="text" id="author" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="category">Category:</label>
-                        <select id="category" required>
-                            <option value="Economy">Economy</option>
-                            <option value="Agriculture">Agriculture</option>
-                            <option value="Exploration">Anthropology & Exploration</option>
-                        </select>
-                    </div>
-                    <div class="form-group" id="content-group">
-                        <label for="content">Article Content:</label>
-                        <textarea id="content" required></textarea>
-                    </div>
-                    <div class="form-group hidden" id="url-group">
-                        <label for="external-url">External Article URL:</label>
-                        <input type="url" id="external-url">
-                    </div>
-                    <div class="form-group hidden" id="source-group">
-                        <label for="source">Source Name:</label>
-                        <input type="text" id="source" placeholder="e.g., Reuters, BBC">
-                    </div>
-                    <button type="submit">Publish Article</button>
-                </form>
-            </div>
-        </div>
-
-        <!-- About Section -->
-        <div id="about-section" class="hidden">
-            <div class="page-content">
-                <h2>About Laos Insight</h2>
-                <p><strong>Laos Insight</strong> is an independent news publication dedicated to providing comprehensive coverage of economic developments, agricultural innovations, and anthropological discoveries in Laos and the greater Southeast Asian region.</p>
-                
-                <h3>Our Mission</h3>
-                <p>We strive to deliver accurate, timely, and insightful reporting on the economic transformation of Laos, sustainable agricultural practices in the region, and the rich cultural heritage being uncovered through anthropological research and exploration.</p>
-                
-                <h3>Editorial Standards</h3>
-                <p>We maintain strict editorial standards, ensuring all our original reporting is thoroughly researched and fact-checked. When we curate news from other sources, we always provide clear attribution and direct links to the original content.</p>
-                
-                <h3>Contact Information</h3>
-                <p><strong>Publisher:</strong> Laos Insight Media Ltd.<br>
-                <strong>Email:</strong> editor@laoseconomynews.com<br>
-                <strong>Location:</strong> Vientiane, Laos</p>
-                
-                <p><em>Established 2025 - Committed to independent journalism</em></p>
-            </div>
-        </div>
-
-        <!-- Contact Section -->
-        <div id="contact-section" class="hidden">
-            <div class="page-content">
-                <h2>Contact Us</h2>
-                <p>We welcome tips, story ideas, and feedback from our readers.</p>
-                
-                <h3>Editorial Team</h3>
-                <p><strong>Email:</strong> editor@laoseconomynews.com</p>
-                
-                <h3>Business Inquiries</h3>
-                <p><strong>Email:</strong> business@laoseconomynews.com</p>
-                
-                <h3>Press & Media</h3>
-                <p><strong>Email:</strong> press@laoseconomynews.com</p>
-                
-                <h3>Mailing Address</h3>
-                <p>Laos Insight Media Ltd.<br>
-                13 Isan Ngum Road<br>
-                Vientiane Capital<br>
-                Lao PDR</p>
-                
-                <p><em>For urgent editorial matters, please use the email address above.</em></p>
-            </div>
-        </div>
-
-        <!-- Privacy Policy Section -->
-        <div id="privacy-section" class="hidden">
-            <div class="page-content">
-                <h2>Privacy Policy</h2>
-                <p><em>Last Updated: November 6, 2025</em></p>
-                
-                <h3>Information We Collect</h3>
-                <p>Laos Insight respects your privacy. Our website does not collect personal information unless you voluntarily provide it when contacting us.</p>
-                
-                <h3>Cookies and Tracking</h3>
-                <p>We use minimal cookies to improve user experience and remember user preferences for navigation.</p>
-                
-                <h3>Third-Party Services</h3>
-                <p>We may use third-party analytics services to understand how visitors use our site. These services may collect information about your visit, but we do not share personally identifiable information with third parties.</p>
-                
-                <h3>External Links</h3>
-                <p>Our website contains links to external news sources. We are not responsible for the privacy practices of these external sites.</p>
-                
-                <h3>Data Security</h3>
-                <p>We implement appropriate security measures to protect the information we collect.</p>
-                
-                <h3>Changes to This Policy</h3>
-                <p>We may update this privacy policy periodically. Changes will be posted on this page with an updated revision date.</p>
-                
-                <h3>Contact</h3>
-                <p>If you have questions about this privacy policy, please contact us at: privacy@laoseconomynews.com</p>
-            </div>
-        </div>
+<header>
+  <h1>Laos Insight</h1>
+  <p>In-depth reporting on economy, agriculture, and exploration in Laos and Southeast Asia</p>
+</header>
+<nav>
+  <ul>
+    <li><a href="#" onclick="showSection('home')" class="active">Home</a></li>
+    <li><a href="#" onclick="showSection('about')">About</a></li>
+    <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+    <li><a href="#" onclick="showSection('privacy')">Privacy Policy</a></li>
+    <li><a href="#" onclick="generateRSS()">RSS Feed</a></li>
+  </ul>
+</nav>
+<div class="container">
+  <div id="home-section">
+    <div class="article-grid" id="articles-grid"></div>
+  </div>
+  <div id="about-section" class="hidden">
+    <div class="page-content">
+      <h2>About Laos Insight</h2>
+      <p><strong>Laos Insight</strong> is an independent news publication dedicated to providing comprehensive coverage of economic developments, agricultural innovations, and anthropological discoveries in Laos and the greater Southeast Asian region.</p>
+      <h3>Our Mission</h3>
+      <p>We strive to deliver accurate, timely, and insightful reporting on the economic transformation of Laos, sustainable agricultural practices in the region, and the rich cultural heritage being uncovered through anthropological research and exploration.</p>
+      <h3>Contact Information</h3>
+      <p><strong>Publisher:</strong> Laos Insight Media Ltd.<br>
+      <strong>Email:</strong> editor@laosinsight.news<br>
+      <strong>Location:</strong> Vientiane, Laos</p>
     </div>
-
-    <footer>
-        <p>&copy; 2025 Laos Insight Media Ltd. | <a href="#" onclick="showSection('privacy')">Privacy Policy</a> | <a href="#" onclick="showSection('contact')">Contact</a></p>
-        <p><em>Independent news reporting on Laos economy, agriculture, and exploration</em></p>
-    </footer>
-
-    <script>
-        let articles = [];
-
-        // Load articles from memory on page load
-        function loadArticles() {
-            const stored = localStorage.getItem('articles');
-            if (stored) {
-                articles = JSON.parse(stored);
-                renderArticles();
-            } else {
-                // Add sample articles
-                articles = [
-                    {
-                        id: Date.now() + 1,
-                        type: 'original',
-                        title: 'Laos Economy Shows 5% Growth in Agricultural Sector',
-                        author: 'Editorial Team',
-                        category: 'Economy',
-                        content: 'The Laotian economy has demonstrated remarkable resilience with a 5% growth in the agricultural sector this quarter. Local farmers have benefited from new irrigation projects and improved access to regional markets...',
-                        date: new Date().toISOString()
-                    },
-                    {
-                        id: Date.now() + 2,
-                        type: 'external',
-                        title: 'New Archaeological Discovery in Luang Prabang Province',
-                        author: 'External Source',
-                        category: 'Exploration',
-                        content: 'Recent anthropological expedition uncovers ancient artifacts dating back to 15th century...',
-                        url: 'https://example.com/archaeology-discovery',
-                        source: 'Southeast Asia Research Journal',
-                        date: new Date(Date.now() - 86400000).toISOString()
-                    }
-                ];
-                saveArticles();
-            }
-        }
-
-        function saveArticles() {
-            localStorage.setItem('articles', JSON.stringify(articles));
-        }
-
-        function renderArticles() {
-            const grid = document.getElementById('articles-grid');
-            grid.innerHTML = '';
-            
-            articles.sort((a, b) => new Date(b.date) - new Date(a.date)).forEach(article => {
-                const card = document.createElement('div');
-                card.className = 'article-card';
-                
-                const dateObj = new Date(article.date);
-                const formattedDate = dateObj.toLocaleDateString('en-US', { 
-                    year: 'numeric', 
-                    month: 'long', 
-                    day: 'numeric' 
-                });
-                
-                const excerpt = article.content.substring(0, 150) + '...';
-                const isExternal = article.type === 'external';
-                
-                card.innerHTML = `
-                    <div class="category">${article.category}</div>
-                    <div class="content" itemscope itemtype="https://schema.org/NewsArticle">
-                        <meta itemprop="datePublished" content="${article.date}">
-                        <h3 itemprop="headline">${article.title}</h3>
-                        <div class="excerpt" itemprop="description">${excerpt}</div>
-                        <div class="meta">
-                            <span itemprop="author">${article.author} | ${formattedDate}</span>
-                            ${isExternal ? `<span class="external-badge">External</span>` : ''}
-                        </div>
-                        ${isExternal ? 
-                            `<div style="margin-top: 1rem;">
-                                <a href="${article.url}" target="_blank" rel="noopener">Read at ${article.source} →</a>
-                            </div>` : 
-                            `<div style="margin-top: 1rem;">
-                                <a href="#" onclick="viewArticle(${article.id})">Read full article →</a>
-                            </div>`
-                        }
-                        <button class="delete-btn" onclick="deleteArticle(${article.id})">Delete</button>
-                    </div>
-                `;
-                
-                grid.appendChild(card);
-            });
-        }
-
-        function viewArticle(id) {
-            const article = articles.find(a => a.id === id);
-            if (!article) return;
-            
-            alert(`Full Article View\n\nTitle: ${article.title}\n\nAuthor: ${article.author}\n\nCategory: ${article.category}\n\nDate: ${new Date(article.date).toLocaleDateString()}\n\nContent:\n${article.content}`);
-        }
-
-        function deleteArticle(id) {
-            if (confirm('Are you sure you want to delete this article?')) {
-                articles = articles.filter(a => a.id !== id);
-                saveArticles();
-                renderArticles();
-            }
-        }
-
-        // Form handling
-        document.getElementById('article-type').addEventListener('change', function() {
-            const isExternal = this.value === 'external';
-            document.getElementById('content-group').classList.toggle('hidden', isExternal);
-            document.getElementById('url-group').classList.toggle('hidden', !isExternal);
-            document.getElementById('source-group').classList.toggle('hidden', !isExternal);
-            
-            document.getElementById('content').required = !isExternal;
-            document.getElementById('external-url').required = isExternal;
-            document.getElementById('source').required = isExternal;
-        });
-
-        document.getElementById('article-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const type = document.getElementById('article-type').value;
-            const article = {
-                id: Date.now(),
-                type: type,
-                title: document.getElementById('title').value,
-                author: document.getElementById('author').value,
-                category: document.getElementById('category').value,
-                date: new Date().toISOString()
-            };
-            
-            if (type === 'original') {
-                article.content = document.getElementById('content').value;
-            } else {
-                article.content = document.getElementById('content').value || 'Click to read at source';
-                article.url = document.getElementById('external-url').value;
-                article.source = document.getElementById('source').value;
-            }
-            
-            articles.push(article);
-            saveArticles();
-            renderArticles();
-            
-            this.reset();
-            alert('Article published successfully!');
-            showSection('home');
-        });
-
-        function showSection(section) {
-            document.querySelectorAll('[id$="-section"]').forEach(s => s.classList.add('hidden'));
-            document.getElementById(section + '-section').classList.remove('hidden');
-            
-            document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
-            event.target.classList.add('active');
-        }
-
-        function generateRSS() {
-            const rssItems = articles.map(article => {
-                const pubDate = new Date(article.date).toUTCString();
-                const link = article.type === 'external' ? article.url : `https://laoseconomynews.com/article/${article.id}`;
-                
-                return `
+  </div>
+  <div id="contact-section" class="hidden">
+    <div class="page-content">
+      <h2>Contact Us</h2>
+      <p>We welcome tips, story ideas, and feedback from our readers.</p>
+      <h3>Editorial Team</h3>
+      <p><strong>Email:</strong> editor@laosinsight.news</p>
+      <h3>Business Inquiries</h3>
+      <p><strong>Email:</strong> business@laosinsight.news</p>
+      <h3>Press & Media</h3>
+      <p><strong>Email:</strong> press@laosinsight.news</p>
+    </div>
+  </div>
+  <div id="privacy-section" class="hidden">
+    <div class="page-content">
+      <h2>Privacy Policy</h2>
+      <p><em>Last Updated: November 6, 2025</em></p>
+      <p>Laos Insight respects your privacy. Our website does not collect personal information unless you voluntarily provide it when contacting us.</p>
+      <p>We use minimal cookies to improve user experience and remember user preferences for navigation.</p>
+      <p>We may use third‑party analytics services to understand how visitors use our site. These services may collect information about your visit, but we do not share personally identifiable information with third parties.</p>
+      <p>Our website contains links to external news sources. We are not responsible for the privacy practices of these external sites.</p>
+      <p>We implement appropriate security measures to protect the information we collect.</p>
+      <p>We may update this privacy policy periodically. Changes will be posted on this page with an updated revision date.</p>
+      <p>If you have questions about this privacy policy, please contact us at: privacy@laosinsight.news</p>
+    </div>
+  </div>
+</div>
+<footer>
+  <p>&copy; 2025 Laos Insight Media Ltd. | <a href="#" onclick="showSection('privacy')">Privacy Policy</a> | <a href="#" onclick="showSection('contact')">Contact</a></p>
+  <p><em>Independent news reporting on Laos economy, agriculture, and exploration</em></p>
+</footer>
+<script>
+let articles = [];
+function loadArticles() {
+  fetch('articles.json')
+    .then(resp => resp.json())
+    .then(data => {
+      articles = data;
+      renderArticles();
+    })
+    .catch(err => console.error(err));
+}
+function renderArticles() {
+  const grid = document.getElementById('articles-grid');
+  grid.innerHTML = '';
+  articles.sort((a,b) => new Date(b.date) - new Date(a.date));
+  articles.forEach(article => {
+    const dateObj = new Date(article.date);
+    const formattedDate = dateObj.toLocaleDateString('en-US',{year:'numeric',month:'long',day:'numeric'});
+    const excerpt = article.content.substring(0,150) + '...';
+    const isExternal = article.type === 'external';
+    const card = document.createElement('div');
+    card.className = 'article-card';
+    card.innerHTML = `
+      <div class="category">${article.category}</div>
+      <h3>${article.title}</h3>
+      <div class="excerpt">${excerpt}</div>
+      <div class="meta">
+        <span>${article.author} | ${formattedDate}</span>
+        ${isExternal ? '<span>External</span>' : ''}
+      </div>
+      <div style="margin-top:.5rem;">
+        ${isExternal ? `<a href="${article.url}" target="_blank" rel="noopener">Read at ${article.source} →</a>` :
+        `<a href="article.html?id=${article.id}">Read full article →</a>`}
+      </div>
+    `;
+    grid.appendChild(card);
+  });
+}
+function showSection(section) {
+  document.querySelectorAll('[id$="-section"]').forEach(el => el.classList.add('hidden'));
+  document.getElementById(section + '-section').classList.remove('hidden');
+  document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+  event.target.classList.add('active');
+}
+function generateRSS() {
+  let rssItems = '';
+  articles.forEach(article => {
+    const pubDate = new Date(article.date).toUTCString();
+    const link = article.type === 'external' ? article.url : 'https://laoseconomynews.com/article.html?id=' + article.id;
+    rssItems += `
     <item>
       <title>${escapeXml(article.title)}</title>
       <link>${link}</link>
-      <description>${escapeXml(article.content.substring(0, 200))}</description>
+      <description>${escapeXml(article.content.substring(0,200))}</description>
       <author>${escapeXml(article.author)}</author>
       <category>${escapeXml(article.category)}</category>
       <pubDate>${pubDate}</pubDate>
       <guid>${link}</guid>
     </item>`;
-            }).join('');
-            
-            const rss = `<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
+  });
+  const rss = `<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel>
     <title>Laos Insight</title>
     <link>https://laoseconomynews.com</link>
     <description>In-depth reporting on economy, agriculture, and exploration in Laos</description>
     <language>en-us</language>
     <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
-    <atom:link href="https://laoseconomynews.com/rss.xml" rel="self" type="application/rss+xml"/>
-${rssItems}
-  </channel>
-</rss>`;
-            
-            const blob = new Blob([rss], { type: 'application/rss+xml' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'rss.xml';
-            a.click();
-        }
-
-        function escapeXml(str) {
-            return str.replace(/[<>&'\"]/g, c => ({
-                '<': '&lt;',
-                '>': '&gt;',
-                '&': '&amp;',
-                "'": '&apos;',
-                '"': '&quot;'
-            }[c]));
-        }
-
-        // Initialize
-        loadArticles();
-    </script>
+    ${rssItems}
+  </channel></rss>`;
+  const blob = new Blob([rss], { type: 'application/rss+xml' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'rss.xml';
+  a.click();
+}
+function escapeXml(str) {
+  return str.replace(/[<>&'"/]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;','\'':'&apos;','"':'&quot;'}[c] || c));
+}
+document.addEventListener('DOMContentLoaded', loadArticles);
+</script>
 </body>
 </html>
