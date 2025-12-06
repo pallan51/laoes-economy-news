@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="News article from Laos Insight">
     <title>Article | Laos Insight</title>
+    <!-- Social and preview meta tags referencing the site logo -->
+    <meta property="og:site_name" content="Laos Insight">
+    <meta property="og:image" content="https://laoseconomynews.com/logo.png">
+    <meta property="og:image:width" content="888">
+    <meta property="og:image:height" content="912">
+    <meta property="og:image:alt" content="Laos Insight logo">
+    <meta name="twitter:image" content="https://laoseconomynews.com/logo.png">
+    <meta name="twitter:image:alt" content="Laos Insight logo">
+    <meta name="twitter:card" content="summary_large_image">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -18,15 +27,25 @@
             color: white;
             padding: 1.5rem 2rem;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        header img {
+            height: 80px;
+            width: auto;
+            margin: 0;
         }
         header h1 {
             font-size: 2rem;
-            margin-bottom: 0.3rem;
+            margin: 0;
         }
         header p {
             font-size: 0.9rem;
             opacity: 0.9;
             font-style: italic;
+            margin: 0;
         }
         .container {
             max-width: 800px;
@@ -65,8 +84,11 @@
 </head>
 <body>
     <header>
-        <h1>Laos Insight</h1>
-        <p>In-depth reporting on economy, agriculture, and exploration in Laos and Southeast Asia</p>
+        <img src="logo.png" alt="Laos Insight logo">
+        <div>
+            <h1>Laos Insight</h1>
+            <p>In-depth reporting on economy, agriculture, and exploration in Laos and Southeast Asia</p>
+        </div>
     </header>
     <div class="container" id="article-container">
         <p>Loading article...</p>
@@ -109,11 +131,48 @@
                 }
                 html += '</article>';
                 container.innerHTML = html;
+
+                // Inject structured data for this article (NewsArticle) to aid search engines
+                const newsLd = {
+                    "@context": "https://schema.org",
+                    "@type": "NewsArticle",
+                    "headline": article.title,
+                    "datePublished": article.date,
+                    "author": {
+                        "@type": "Person",
+                        "name": article.author
+                    },
+                    "publisher": {
+                        "@type": "Organization",
+                        "name": "Laos Insight",
+                        "logo": {
+                            "@type": "ImageObject",
+                            "url": "https://laoseconomynews.com/logo.png",
+                            "width": 888,
+                            "height": 912
+                        }
+                    },
+                    "description": article.content.substring(0, 200),
+                    "image": "https://laoseconomynews.com/logo.png",
+                    "mainEntityOfPage": {
+                        "@type": "WebPage",
+                        "@id": window.location.href
+                    }
+                };
+                const scriptLd = document.createElement('script');
+                scriptLd.type = 'application/ld+json';
+                scriptLd.text = JSON.stringify(newsLd);
+                document.head.appendChild(scriptLd);
+                // Update the page description meta tag dynamically based on article content
+                const metaDesc = document.querySelector('meta[name="description"]');
+                if (metaDesc) {
+                    metaDesc.setAttribute('content', article.content.substring(0, 160));
+                }
             })
             .catch(err => {
                 console.error(err);
-                const container = document.getElementById('article-container');
-                container.innerHTML = '<p>Failed to load article.</p>';
+                const containerEl = document.getElementById('article-container');
+                containerEl.innerHTML = '<p>Failed to load article.</p>';
             });
     </script>
 </body>
